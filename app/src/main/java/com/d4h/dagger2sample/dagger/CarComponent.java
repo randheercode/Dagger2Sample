@@ -5,7 +5,7 @@ import com.d4h.dagger2sample.deps.Car;
 
 import dagger.Component;
 
-@Component(modules = {WheelsModule.class, PetrolEngineModule.class})
+@Component(modules = {WheelsModule.class, DieselEngineModule.class})
 public interface CarComponent {
 
     Car getCar();
