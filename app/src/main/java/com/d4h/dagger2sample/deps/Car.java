@@ -3,6 +3,8 @@ package com.d4h.dagger2sample.deps;
 
 import android.util.Log;
 
+import com.d4h.dagger2sample.deps.engine.Engine;
+
 import javax.inject.Inject;
 
 public class Car {
@@ -23,6 +25,7 @@ public class Car {
     }
 
     public void drive() {
+        engine.start();
         Log.d(TAG, "driving...");
     }
 }
