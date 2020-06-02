@@ -4,14 +4,13 @@ import com.d4h.dagger2sample.MainActivity;
 import com.d4h.dagger2sample.deps.Car;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Singleton
-@Component(modules = {WheelsModule.class, PetrolEngineModule.class})
-public interface CarComponent {
+@PerActivity
+@Component(dependencies = AppComponent.class, modules = {WheelsModule.class, PetrolEngineModule.class})
+public interface ActivityComponent {
 
     Car getCar();
 
@@ -26,6 +25,8 @@ public interface CarComponent {
         @BindsInstance
         Builder engineCapacity(@Named("EngineCapacity") int engineCapacity);
 
-        CarComponent build();
+        Builder appComponent(AppComponent appComponent);
+
+        ActivityComponent build();
     }
 }
