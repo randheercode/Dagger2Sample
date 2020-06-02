@@ -20,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ActivityComponent component = ((Dagger2SampleApplication) getApplication()).getComponent()
-                .getActivityComponentBuilder()
-                .horsePower(232)
-                .engineCapacity(3243)
-                .build();
+                .getActivityComponentFactory()
+                .create(232, 4324);
 
         component.inject(this);
 
