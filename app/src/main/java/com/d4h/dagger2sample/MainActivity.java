@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.d4h.dagger2sample.dagger.CarComponent;
 import com.d4h.dagger2sample.dagger.DaggerCarComponent;
-import com.d4h.dagger2sample.dagger.DieselEngineModule;
 import com.d4h.dagger2sample.deps.Car;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     @Inject
-    Car car;
+    Car car1, car2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         component.inject(this);
 
-        car.drive();
+        car1.drive();
+        car2.drive();
     }
 }

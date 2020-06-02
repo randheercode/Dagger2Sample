@@ -4,10 +4,12 @@ import com.d4h.dagger2sample.MainActivity;
 import com.d4h.dagger2sample.deps.Car;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
+@Singleton
 @Component(modules = {WheelsModule.class, PetrolEngineModule.class})
 public interface CarComponent {
 
